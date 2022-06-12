@@ -12,7 +12,8 @@ app.use(helmet());
 
 app.post('/login', controllers.authController);
 
-// despois do login toda requisao vindo do front terá que passar pelo authMiddlero para autorizacao
+// despois do login toda requisao vindo do front terá que passar pelo authMiddleware para autenticacao
+// teste só para verificar se está ok nosso jsonwebtoken.
 app.get('/', authMiddleware, (req, res, next) => {
     res.send('authenticate ok!');
 });
